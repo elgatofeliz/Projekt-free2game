@@ -7,6 +7,8 @@ buttons / navbars / popups / ...
 nav {
   position: fixed;
   .sidebar-nav {
+    z-index: 100;
+    transition: all 0.2s;
     background-color: $background-color;
     flex-wrap: wrap;
     position: fixed;
@@ -30,11 +32,48 @@ nav {
         margin: 0 0 0.8rem 0;
       }
     }
+    .burger-active {
+      background-color: $background-color;
+      transition: 0.2s;
+      cursor: pointer;
+      margin: 20px 10px 0 0;
+      align-self: flex-end;
+      width: 30px;
+      span {
+        width: 35px;
+        background-color: #fff;
+        height: 2px;
+        position: absolute;
+        display: block;
+        margin: 0 0 0.8rem 0;
+        &:first-of-type {
+          transform: rotate(45deg);
+        }
+        &:last-of-type {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    .show {
+      display: none;
+    }
     .menu-nav {
+      width: 100%;
       a {
         display: block;
         border-radius: 15px;
-        margin: 30% 0;
+        overflow: hidden;
+        margin: 50px 0;
+        font-size: 1.5rem;
+        .link-wrap {
+          display: flex;
+          width: 200px;
+          align-items: center;
+
+          img {
+            margin: 0 20px 0 1px;
+          }
+        }
       }
       img {
         width: 50px;
@@ -47,7 +86,9 @@ nav {
       height: 10px;
     }
   }
-
+  .active-menu {
+    width: 20%;
+  }
   .top-nav {
     background-color: $background-color;
     display: flex;

@@ -7,38 +7,56 @@ class Nav extends Component {
     super(props);
     this.state = {};
   }
-  showSettings(event) {
-    event.preventDefault();
+  showSettings() {
+    let menu = document.querySelector(".sidebar-nav");
+    let burger = document.querySelector(".burger");
+    let burgerActive = document.querySelector(".burger-active");
+    menu.classList.toggle("active-menu");
+    burger.classList.toggle("show");
+    burgerActive.classList.toggle("show");
   }
   render() {
     return (
       <nav>
-        <section onClick={this.showSettings} className="sidebar-nav">
-          <div className="burger">
+        <section className="sidebar-nav">
+          <div onClick={this.showSettings} className="burger">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <Menu className="menu-nav">
+          <div onClick={this.showSettings} className="burger-active show">
+            <span></span>
+            <span></span>
+          </div>
+          <div className="menu-nav">
             <NavLink
               className={(navData) => (navData.isActive ? "active" : "")}
               to="/"
             >
-              <img src="../../img/home.svg" alt="home" />
+              <div className="link-wrap">
+                <img src="../../img/home.svg" alt="home" />
+                Home
+              </div>
             </NavLink>
             <NavLink
               className={(navData) => (navData.isActive ? "active" : "")}
               to="/all"
             >
-              <img src="../../img/pad.svg" alt="pad" />
+              <div className="link-wrap">
+                <img src="../../img/pad.svg" alt="pad" />
+                All Games
+              </div>
             </NavLink>
             <NavLink
               className={(navData) => (navData.isActive ? "active" : "")}
               to="/recently"
             >
-              <img src="../../img/plus.svg" alt="plus" />
+              <div className="link-wrap">
+                <img src="../../img/plus.svg" alt="plus" />
+                Recently Added
+              </div>
             </NavLink>
-          </Menu>
+          </div>
           <div className="placeholder"></div>
         </section>
         <section className="top-nav">

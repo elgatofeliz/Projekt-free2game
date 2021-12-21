@@ -14,7 +14,7 @@ class Home extends Component {
         <section className="recent-added-section">
           <h2>Recently Added</h2>
           <article className="first-grid">
-            <div></div>
+            <div className="carts"></div>
             <div></div>
             <div></div>
             <div></div>

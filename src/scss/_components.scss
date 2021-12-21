@@ -90,15 +90,20 @@ nav {
     }
   }
   .active-menu {
-    width: 20%;
+    width: 250px;
+  }
+  .active-top {
+    left: 250px;
+  }
+  .unactive-top {
+    left: 70px;
   }
   .top-nav {
-    background-color: $background-color;
     display: flex;
+    transition: all 0.2s;
     height: 65px;
     justify-content: space-between;
     position: fixed;
-    left: 70px;
     right: 0;
     top: 0;
     padding: 10px 1%;

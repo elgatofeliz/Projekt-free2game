@@ -11,9 +11,12 @@ class Nav extends Component {
     let menu = document.querySelector(".sidebar-nav");
     let burger = document.querySelector(".burger");
     let burgerActive = document.querySelector(".burger-active");
+    let topNav = document.querySelector(".top-nav");
     menu.classList.toggle("active-menu");
     burger.classList.toggle("show");
     burgerActive.classList.toggle("show");
+    topNav.classList.toggle("active-top");
+    topNav.classList.toggle("unactive-top");
   }
   render() {
     return (
@@ -59,7 +62,7 @@ class Nav extends Component {
           </div>
           <div className="placeholder"></div>
         </section>
-        <section className="top-nav">
+        <section className="top-nav unactive-top">
           <div>
             <NavLink to="/">
               <img src="../../img/logo.svg" alt="plus" />

@@ -24,6 +24,7 @@ nav {
     .burger {
       cursor: pointer;
       margin: 10px;
+      height: 30px;
       span {
         width: 25px;
         background-color: #fff;
@@ -39,6 +40,7 @@ nav {
       margin: 20px 10px 0 0;
       align-self: flex-end;
       width: 30px;
+      height: 30px;
       span {
         width: 35px;
         background-color: #fff;
@@ -64,11 +66,12 @@ nav {
         border-radius: 15px;
         overflow: hidden;
         margin: 50px 0;
-        font-size: 1.5rem;
+        font-size: 1rem;
         .link-wrap {
           display: flex;
           width: 200px;
           align-items: center;
+          padding: 1%;
 
           img {
             margin: 0 20px 0 1px;

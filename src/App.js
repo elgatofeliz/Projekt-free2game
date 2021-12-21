@@ -1,6 +1,5 @@
 import "./scss/main.scss";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
 import Nav from "./components/nav/Nav";
 
 // pages

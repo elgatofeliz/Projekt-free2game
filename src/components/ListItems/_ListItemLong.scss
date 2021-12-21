@@ -46,7 +46,8 @@
         color: white;
         .PC {
           width: 36px;
-          background: url(../../img/win.svg) center/contain no-repeat;
+          background: url(../../img/win.svg) center/contain no-repeat
+            $background-color;
           margin: 2%;
           background-size: 50%;
           padding: 20px;
@@ -57,7 +58,8 @@
         .We {
           height: 40px;
           width: 36px;
-          background: url(../../img/web.svg) center/contain no-repeat;
+          background: url(../../img/web.svg) center/contain no-repeat
+            $background-color;
           margin: 2%;
           background-size: 50%;
           padding: 20px;
@@ -67,6 +69,7 @@
         }
         p {
           font-family: $head-font;
+          color: #fff;
         }
         .redRing {
           margin: 5px;

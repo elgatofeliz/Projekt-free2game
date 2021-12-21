@@ -55,6 +55,23 @@ class Home extends Component {
               Show More
             </Link>
           </article>
+          <h2>Top 4 Games for PC in June 2021</h2>
+          <article className="items-wrap-grid">
+            {this.state.Data.slice(0, 4).map((elt) => (
+              <ListItemLong
+                image={elt.thumbnail}
+                alt={elt.title}
+                title={elt.title}
+                id={elt.id}
+                platform={elt.platform}
+                genre={elt.genre}
+                key={elt.id}
+              />
+            ))}
+            <Link className="readMoreBtn" to="/recently">
+              Show More
+            </Link>
+          </article>
         </section>
       </section>
     );

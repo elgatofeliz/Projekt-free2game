@@ -1,6 +1,5 @@
 import "./scss/main.scss";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
 import Nav from "./components/nav/Nav";
 
 // pages
@@ -17,7 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/all" element={<All />} />
           <Route path="/recently" element={<Recently />} />
-          <Route path="/all/:id" element={<Detail />} />
+          <Route path="/Detail" element={<Detail />} />
         </Routes>
       </Router>
     </div>

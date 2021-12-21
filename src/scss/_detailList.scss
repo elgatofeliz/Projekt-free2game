@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.sectionDetail{
+    background-color:#040F14;
+    color:#fff;
+    margin: 0 0 0 10vh;
+.heroPic{
+    width: 95%;
+    margin:0 0 0 5vh;
+    border-radius:20px;
+    height: 60vh;
+    object-position: border;
+}
+
+.grid1{
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+.img3-4{
+width:80%;
+border-radius: 20px;
+}
+.developerDiv{
+    width: 50vw;
+    div{
+        display:flex;
+        h3{
+            width:15vw;
+        }
+    }
+}
+}
+.grid2{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+} 
+}
+

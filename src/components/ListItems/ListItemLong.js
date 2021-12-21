@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const ListItemLong = (props) => {
   return (
-    <div className="listItemLong">
+    <article className="listItemLong">
       <img src={props.image} alt={props.alt} />
       <div className="contentBox">
         <h3>{props.title}</h3>
@@ -30,10 +30,10 @@ const ListItemLong = (props) => {
                 .map((elt) => elt.slice(0, 2))[1]
             }
           />
-          <h4 className="redRing">{props.genre}</h4>
+          <p className="redRing">{props.genre}</p>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

@@ -1,13 +1,13 @@
-import DetailList from '../components/DetailList/DetailList'
+import React from "react";
+
+import DetailList from "../components/DetailList/DetailList";
 
 const Detail = () => {
-    return (
-        <div>
-            <h1>Hallo welt
-            </h1>
-            <DetailList />
-        </div>
-    );
-}
+  return (
+    <React.Fragment>
+      <DetailList />
+    </React.Fragment>
+  );
+};
 
 export default Detail;

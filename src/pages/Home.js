@@ -9,6 +9,7 @@ let fetchUrlPc =
 let fetchUrlBrowser =
   "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&sort-by=release-date";
 
+console.log("test");
 class Home extends Component {
   constructor(props) {
     super(props);

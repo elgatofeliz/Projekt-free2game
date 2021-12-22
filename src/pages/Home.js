@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import Api from "../../src/api_key/RapidApiKey.js";
 import ListItemLong from "../components/ListItems/ListItemLong.js";
 import { Link } from "react-router-dom";
+let fetchUrlRelease =
+  "https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=release-date";
+let fetchUrlPc =
+  "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc&sort-by=release-date";
+let fetchUrlBrowser =
+  "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&sort-by=release-date";
 
 class Home extends Component {
   constructor(props) {
@@ -13,53 +19,35 @@ class Home extends Component {
     };
   }
   componentDidMount() {
-    fetch(
-      "https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=release-date",
-      {
+    Promise.all([
+      fetch(fetchUrlRelease, {
         method: "GET",
         headers: {
           "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
           "x-rapidapi-key": Api,
         },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ Data: data }, () => {});
-      })
-      .catch((err) => console.log(err));
-
-    fetch(
-      "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc&sort-by=release-date",
-      {
+      }).then((response) => response.json()),
+      fetch(fetchUrlPc, {
         method: "GET",
         headers: {
           "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
           "x-rapidapi-key": Api,
         },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ DataPc: data }, () => {
+      }).then((response) => response.json()),
+      fetch(fetchUrlBrowser, {
+        method: "GET",
+        headers: {
+          "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
+          "x-rapidapi-key": Api,
+        },
+      }).then((response) => response.json()),
+    ])
+      .then(([data1, data2, data3]) => {
+        this.setState({ Data: data1 }, () => {});
+        this.setState({ DataPc: data2 }, () => {
           console.log(this.state.DataPc);
         });
-      })
-      .catch((err) => console.log(err));
-
-    fetch(
-      "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=browser&sort-by=release-date",
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-          "x-rapidapi-key": Api,
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ DataBrowser: data }, () => {
+        this.setState({ DataBrowser: data3 }, () => {
           console.log(this.state.DataBrowser);
         });
       })

@@ -1,7 +1,6 @@
 import "./scss/main.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/nav/Nav";
-import Api from "../src/api_key/RapidApiKey";
 
 // pages
 import Home from "./pages/Home";

@@ -23,8 +23,8 @@ buttons / navbars / popups / ...
 /* # # # # #  NAV # # # # # */
 nav {
   position: fixed;
+  z-index: 1000;
   .sidebar-nav {
-    z-index: 1000;
     transition: all 0.2s;
     background-color: $background-color;
     flex-wrap: wrap;
@@ -51,7 +51,6 @@ nav {
       }
     }
     .burger-active {
-      background-color: $background-color;
       transition: 0.2s;
       cursor: pointer;
       margin: 20px 10px 0 0;

@@ -82,3 +82,37 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    .sectionDetail {
+      display: block;
+      margin: 60px 10px 0 10px;
+      h1 {
+        margin: 5% 0px 5% 50px;
+      }
+      .imgNoDrei {
+        width: 80%;
+        margin: 0 0 5% 50px;
+      }
+      .imgNoVier {
+        width: 80%;
+        margin: 0 0% 10% 50px;
+      }
+      .firstArticleGrid {
+        padding-right: 10%;
+      }
+      .secondArticleGrid {
+        text-align: justify;
+        padding: 0;
+      }
+      .thirdArticleGrid {
+        margin: 0 0 5vh 50px;
+        padding-right: 15%;
+      }
+      .fourArticleGrid {
+        margin: 0 0 5vh 50px;
+      }
+    }
+  }
+}

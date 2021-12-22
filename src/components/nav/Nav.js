@@ -11,16 +11,19 @@ class Nav extends Component {
     let burger = document.querySelector(".burger");
     let burgerActive = document.querySelector(".burger-active");
     let topNav = document.querySelector(".top-nav");
+    let menuNav = document.querySelector(".menu-nav");
     menu.classList.toggle("active-menu");
+    menu.classList.toggle("mobile-show-wrap");
     burger.classList.toggle("show");
     burgerActive.classList.toggle("show");
     topNav.classList.toggle("active-top");
     topNav.classList.toggle("unactive-top");
+    menuNav.classList.toggle("mobile-show");
   }
   render() {
     return (
       <nav>
-        <section className="sidebar-nav">
+        <section className="sidebar-nav mobile-background-menu">
           <div onClick={this.showSettings} className="burger">
             <span></span>
             <span></span>
@@ -30,7 +33,7 @@ class Nav extends Component {
             <span></span>
             <span></span>
           </div>
-          <div className="menu-nav">
+          <div className="menu-nav mobile-show">
             <NavLink
               className={(navData) => (navData.isActive ? "active" : "")}
               to="/"

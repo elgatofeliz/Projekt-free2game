@@ -12,7 +12,7 @@ const DetailList = (props) => {
         <img src={props.thumbnail} alt="" />
         <h2>Plattform: {props.platform} </h2>
         <p className="redRing">{props.genre}</p>
-        <a className="readMoreBtn" target="_blank" href={props.game_url}>
+        <a className="readMoreBtn" href={props.game_url}>
           PLAY Now
         </a>
       </article>

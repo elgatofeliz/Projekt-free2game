@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Api from "../../src/api_key/RapidApiKey.js";
 import ListItemLong from "../components/ListItems/ListItemLong.js";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   constructor(props) {
@@ -25,8 +25,7 @@ class Home extends Component {
     )
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ Data: data }, () => {
-        });
+        this.setState({ Data: data }, () => {});
       })
       .catch((err) => console.log(err));
 

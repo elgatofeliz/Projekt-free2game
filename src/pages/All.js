@@ -15,8 +15,6 @@ class All extends Component {
     };
   }
 
-
-
   componentDidMount() {
     fetch("https://free-to-play-games-database.p.rapidapi.com/api/games", {
       method: "GET",
@@ -158,9 +156,7 @@ class All extends Component {
         <header>
           <h1>All Games</h1>
         </header>
-        <section className="recent-added-section">
-          <h2>Recently Added</h2>
-
+        <div>
           <button onClick={() => this.searchGenre("MMO")}>MMO</button>
           <button onClick={() => this.searchGenre("Card Game")}>Card Game</button>
           <button onClick={() => this.searchGenre("MMORPG")}>MMORPG</button>
@@ -172,31 +168,28 @@ class All extends Component {
           <button onClick={() => this.searchGenre("Social")}>Social</button>
           <button onClick={() => this.searchGenre("Fighting")}>Fighting</button>
 
-
           <button onClick={() => this.searchPlatform("Web Browser")}>Web Browser</button>
           <button onClick={() => this.searchPlatform("PC (Windows)")}>PC (Windows)</button>
-
-
           <h2 style={{
             display: this.state.platformFilterActive ? "block" : "none"
           }}><button onClick={() => this.removePlatform()}>X</button>{this.state.platformFilter}</h2>
           <h2 style={{
             display: this.state.genreFilterActive ? "block" : "none"
           }}><button onClick={() => this.removeGenre()}>X</button>{this.state.genreFilter}</h2>
-          <article className="first-grid">
-            {this.state.workData.map(elt => (
-              <ListItemLong
-                image={elt.thumbnail}
-                alt={elt.title}
-                title={elt.title}
-                short_description={elt.short_description}
-                id={elt.id}
-                platform={elt.platform}
-                genre={elt.genre}
-                key={elt.id}
-              />
-            ))}
-          </article>
+        </div>
+        <section className="items-wrap">
+          {this.state.workData.map((elt) => (
+            <ListItemLong
+              image={elt.thumbnail}
+              alt={elt.title}
+              title={elt.title}
+              short_description={elt.short_description}
+              id={elt.id}
+              platform={elt.platform}
+              genre={elt.genre}
+              key={elt.id}
+            />
+          ))}
         </section>
       </section >
     );

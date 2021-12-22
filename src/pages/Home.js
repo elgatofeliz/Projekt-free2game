@@ -37,8 +37,8 @@ class Home extends Component {
           <h1>Find & track the best free-to-play games!</h1>
         </header>
         <section className="recent-added-section">
-          <h2>Recently Added</h2>
           <article className="items-wrap">
+            <h2>Recently Added</h2>
             {this.state.Data.slice(0, 4).map((elt) => (
               <ListItemLong
                 image={elt.thumbnail}
@@ -55,8 +55,8 @@ class Home extends Component {
               Show More
             </Link>
           </article>
-          <h2>Top 4 Games for PC in June 2021</h2>
           <article className="items-wrap-grid">
+            <h2>Top 4 Games for PC in June 2021</h2>
             {this.state.Data.slice(0, 4).map((elt) => (
               <ListItemLong
                 image={elt.thumbnail}

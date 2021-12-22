@@ -1,6 +1,4 @@
 import "./_detailList.scss";
-// import Api from "../../api_key/RapidApiKey"
-// import React, { Component } from "react";
 
 const DetailList = (props) => {
   //let gameData = blogData;

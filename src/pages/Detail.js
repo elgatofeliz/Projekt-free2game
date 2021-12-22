@@ -1,5 +1,4 @@
 import DetailList from "../components/DetailList/DetailList";
-import Api from "../api_key/RapidApiKey";
 import React, { Component } from "react";
 
 class Detail extends Component {
@@ -22,7 +21,7 @@ class Detail extends Component {
         method: "GET",
         headers: {
           "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-          "x-rapidapi-key": Api,
+          "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         },
       }
     )

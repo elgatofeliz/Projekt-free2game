@@ -36,8 +36,7 @@
       }
       .whiteLine {
         width: 100%;
-        border: 1px solid #fff;
-        opacity: 0.2;
+        border: 1px solid rgb(140, 167, 191);
         margin: 5% 0;
         z-index: 2;
       }
@@ -75,6 +74,19 @@
         .redRing {
           margin: 5px;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    .items-wrap {
+      display: block;
+      padding: 0;
+      .listItemLong {
+        width: 100%;
+        margin: 5% 0 5% 0;
       }
     }
   }

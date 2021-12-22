@@ -1,5 +1,5 @@
 import "./scss/main.scss";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/nav/Nav";
 
 // pages
@@ -9,6 +9,7 @@ import Recently from "./pages/Recently";
 import TopGamesPc from "./pages/TopGamesPc";
 import TopGamesBrowser from "./pages/TopGamesBrowser";
 import Detail from "./pages/Detail";
+
 function App() {
   return (
     <div className="App">

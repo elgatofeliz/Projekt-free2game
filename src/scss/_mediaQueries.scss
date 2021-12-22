@@ -1,0 +1,118 @@
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 70%;
+  }
+  nav {
+    position: fixed;
+    z-index: 1000;
+    .mobile-show-wrap {
+      bottom: 0;
+    }
+
+    .sidebar-nav {
+      bottom: auto;
+      border: none;
+      padding: 10px 0 0 0;
+      .burger {
+        cursor: pointer;
+        margin: 10px;
+        height: 30px;
+        span {
+          width: 25px;
+          background-color: #fff;
+          height: 2px;
+          display: block;
+          margin: 0 0 0.8rem 0;
+        }
+      }
+      .burger-active {
+        transition: 0.2s;
+        cursor: pointer;
+        margin: 20px 10px 0 0;
+        align-self: flex-end;
+        width: 30px;
+        height: 30px;
+        span {
+          width: 35px;
+          background-color: #fff;
+          height: 2px;
+          position: absolute;
+          display: block;
+          margin: 0 0 0.8rem 0;
+          &:first-of-type {
+            transform: rotate(45deg);
+          }
+          &:last-of-type {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      .show {
+        display: none;
+      }
+      .mobile-show {
+        display: none;
+      }
+      .menu-nav {
+        width: 100%;
+        a {
+          display: block;
+          border-radius: 15px;
+          overflow: hidden;
+          margin: 50px 0;
+          font-size: 1rem;
+          .link-wrap {
+            display: flex;
+            width: 200px;
+            align-items: center;
+            padding: 1%;
+
+            img {
+              margin: 0 20px 0 1px;
+            }
+          }
+        }
+        img {
+          width: 50px;
+        }
+        .active {
+          background-color: $background-color-buttons;
+        }
+      }
+      .placeholder {
+        height: 10px;
+      }
+    }
+    .mobile-background-menu {
+      background-color: rgba(133, 60, 60, 0);
+    }
+    .active-menu {
+      width: 250px;
+      background-color: $background-color;
+    }
+    .active-top {
+      left: 250px;
+    }
+    .unactive-top {
+      left: 70px;
+    }
+    .top-nav {
+      div {
+        display: flex;
+        align-items: center;
+        p {
+          display: none;
+        }
+        a {
+          margin: 5%;
+        }
+        input {
+          width: 220px;
+          border-radius: 10px;
+          padding: 5% 5%;
+          background: url(../img/search.svg) no-repeat scroll center right 10px;
+        }
+      }
+    }
+  }
+}

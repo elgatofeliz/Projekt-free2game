@@ -38,6 +38,7 @@ class All extends Component {
               image={elt.thumbnail}
               alt={elt.title}
               title={elt.title}
+              short_description={elt.short_description}
               id={elt.id}
               platform={elt.platform}
               genre={elt.genre}

@@ -2,7 +2,7 @@ import ListItemLong from "../components/ListItems/ListItemLong.js";
 import Api from "../../src/api_key/RapidApiKey.js";
 import React, { Component } from "react";
 
-class Recently extends Component {
+class TopGamesPc extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +11,7 @@ class Recently extends Component {
   }
   componentDidMount() {
     fetch(
-      "https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=release-date",
+      "https://free-to-play-games-database.p.rapidapi.com/api/games?platform=pc&sort-by=release-date",
       {
         method: "GET",
         headers: {
@@ -31,19 +31,20 @@ class Recently extends Component {
 
   render() {
     return (
-      <section className="recently-section">
+      <section className="all-section">
         <header>
-          <h1>Recently Added</h1>
+          <h1>All Games</h1>
         </header>
 
         <section className="items-wrap">
+          <h2>Top Games for PC</h2>
           {this.state.Data.map((elt) => (
             <ListItemLong
               image={elt.thumbnail}
               alt={elt.title}
               title={elt.title}
-              id={elt.id}
               short_description={elt.short_description}
+              id={elt.id}
               platform={elt.platform}
               genre={elt.genre}
               key={elt.id}
@@ -55,4 +56,4 @@ class Recently extends Component {
   }
 }
 
-export default Recently;
+export default TopGamesPc;

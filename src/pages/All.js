@@ -1,5 +1,5 @@
-import ListItemLong from '../components/ListItems/ListItemLong.js'
-import Api from '../../src/api_key/RapidApiKey.js'
+import ListItemLong from "../components/ListItems/ListItemLong.js";
+import Api from "../../src/api_key/RapidApiKey.js";
 import React, { Component } from "react";
 
 class All extends Component {
@@ -14,18 +14,18 @@ class All extends Component {
 
   componentDidMount() {
     fetch("https://free-to-play-games-database.p.rapidapi.com/api/games", {
-      "method": "GET",
-      "headers": {
+      method: "GET",
+      headers: {
         "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-        "x-rapidapi-key": Api
-      }
+        "x-rapidapi-key": Api,
+      },
     })
       .then(response => response.json())
       .then(data => {
         this.setState({ Data: data }, () => { console.log(this.state.Data) })
         this.setState({ workData: data }, () => { console.log(this.state.workData) })
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   }
 
   // #####################################################################

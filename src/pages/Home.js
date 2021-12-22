@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Api from "../../src/api_key/RapidApiKey.js";
 import ListItemLong from "../components/ListItems/ListItemLong.js";
 import { Link } from "react-router-dom";
 let fetchUrlRelease =
@@ -25,21 +24,21 @@ class Home extends Component {
         method: "GET",
         headers: {
           "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-          "x-rapidapi-key": Api,
+          "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         },
       }).then((response) => response.json()),
       fetch(fetchUrlPc, {
         method: "GET",
         headers: {
           "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-          "x-rapidapi-key": Api,
+          "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         },
       }).then((response) => response.json()),
       fetch(fetchUrlBrowser, {
         method: "GET",
         headers: {
           "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
-          "x-rapidapi-key": Api,
+          "x-rapidapi-key": process.env.REACT_APP_API_KEY,
         },
       }).then((response) => response.json()),
     ])

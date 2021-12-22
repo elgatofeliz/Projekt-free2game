@@ -26,7 +26,6 @@ class Home extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({ Data: data }, () => {
-          console.log(this.state.Data);
         });
       })
       .catch((err) => console.log(err));

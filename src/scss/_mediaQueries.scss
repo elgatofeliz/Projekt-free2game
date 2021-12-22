@@ -1,4 +1,7 @@
 @media only screen and (max-width: 600px) {
+  html {
+    font-size: 70%;
+  }
   nav {
     position: fixed;
     z-index: 1000;
@@ -9,6 +12,7 @@
     .sidebar-nav {
       bottom: auto;
       border: none;
+      padding: 10px 0 0 0;
       .burger {
         cursor: pointer;
         margin: 10px;

@@ -1,0 +1,82 @@
+.scrollbarActive {
+  height: 300px;
+}
+
+.scrollbarPassive {
+  height: 0px;
+}
+.dropDownWrapper {
+  position: relative;
+
+  .dropdownBody {
+    position: absolute;
+    width: 100%;
+
+    .dropdownHeader {
+      background-color: #ff4654;
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .scrollbar {
+      overflow-x: hidden;
+      overflow-y: auto;
+      transition: 0.2s;
+    }
+
+    font-family: Oswald, sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 18px;
+    background: #102130;
+    border-radius: 12px;
+
+    .dropdownItem {
+      display: block;
+      background-color: #375470;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+
+      > input {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.v-active {
+  transform: rotate(180deg);
+}
+.activeFilters {
+  transition: all 0.2s;
+  display: flex;
+  margin: 2% 0 0 0;
+  grid-column: 1/5;
+  align-items: center;
+  h3 {
+    margin: 0 2% 0 0;
+  }
+  button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    margin: 0 10px 0 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dropDownWrapper {
+    .dropdownBody {
+      position: static;
+      margin: 5% 0;
+    }
+  }
+}

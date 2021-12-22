@@ -45,7 +45,6 @@ class Detail extends Component {
       <React.Fragment>
         <DetailList
           title={this.state.gameData.title}
-          game_url={this.state.gameData.game_url}
           thumbnail={this.state.gameData.thumbnail}
           platform={this.state.gameData.platform}
           genre={this.state.gameData.genre}

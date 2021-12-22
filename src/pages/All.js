@@ -3,14 +3,19 @@ import Api from "../../src/api_key/RapidApiKey.js";
 import React, { Component } from "react";
 
 class All extends Component {
-  state = {
-    Data: [],
-    workData: [],
-    genreFilterActive: false,
-    genreFilter: "",
-    platformFilterActive: false,
-    platformFilter: "",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      Data: [],
+      workData: [],
+      genreFilterActive: false,
+      genreFilter: "",
+      platformFilterActive: false,
+      platformFilter: "",
+    };
+  }
+
+
 
   componentDidMount() {
     fetch("https://free-to-play-games-database.p.rapidapi.com/api/games", {

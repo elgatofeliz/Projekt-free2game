@@ -44,7 +44,7 @@ class All extends Component {
       if (input === "PC (Windows)" || input === "Web Browser") {
         console.log(input + "works");
         let searchArrayPlatform = this.state.workData.filter((elt) => {
-          return elt.platform == input;
+          return elt.platform === input;
         });
 
         this.setState({ workData: searchArrayPlatform });

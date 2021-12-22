@@ -1,6 +1,7 @@
 import ListItemLong from "../components/ListItems/ListItemLong.js";
 import React, { Component } from "react";
 
+console.log("test");
 class TopGamesPc extends Component {
   constructor(props) {
     super(props);

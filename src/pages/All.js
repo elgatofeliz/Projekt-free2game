@@ -64,6 +64,7 @@ class All extends Component {
         this.setState({ Browser: false });
         console.log(this.state.Windows + "Card");
         break;
+      default:
     }
 
     this.setState();
@@ -123,12 +124,13 @@ class All extends Component {
         this.setState({ Windows: false });
         console.log(this.state.Windows + "Card");
         break;
+      default:
     }
 
     console.log(this.state.platformFilterActive);
     if (
-      this.state.genreFilterActive == true &&
-      this.state.platformFilterActive == true
+      this.state.genreFilterActive === true &&
+      this.state.platformFilterActive === true
     ) {
       let searchArrayPlatform = this.state.Data.filter((elt) => {
         return elt.genre === this.state.genreFilter;
@@ -283,9 +285,10 @@ class All extends Component {
         this.setState({ Fighting: true });
         console.log(this.state.Fighting);
         break;
+      default:
     }
 
-    if (this.state.genreFilterActive == false) {
+    if (this.state.genreFilterActive === false) {
       let searchArrayGenre = this.state.workData.filter((elt) => {
         return elt.genre === input;
       });
@@ -368,11 +371,12 @@ class All extends Component {
         this.setState({ Fighting: !this.state.Fighting });
         console.log(this.state.Fighting);
         break;
+      default:
     }
 
     if (
-      this.state.genreFilterActive == true &&
-      this.state.platformFilterActive == true
+      this.state.genreFilterActive === true &&
+      this.state.platformFilterActive === true
     ) {
       let searchArrayGenre = this.state.Data.filter((elt) => {
         return elt.platform === this.state.platformFilter;

@@ -1,0 +1,60 @@
+.scrollbarActive{
+    height: 300px;
+}
+
+.scrollbarPassive{
+    height: 0px;
+}
+.dropDownWrapper{
+    position: relative;
+
+    .dropdownBody{
+        position: absolute;
+        width: 100%;
+
+        .dropdownHeader{
+            background-color: #FF4654;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .scrollbar{
+            overflow-x: hidden;
+            overflow-y: auto;
+            transition: .2s;
+        }
+
+        font-family: Oswald, sans-serif;
+        letter-spacing: 0.5px;
+        font-size: 18px;
+        background:#102130;
+        border-radius: 12px;
+
+        .dropdownItem{
+            display: block;
+            background-color: #375470;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+
+            >input{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.activeFilters{
+    height: 30px;
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}

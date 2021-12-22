@@ -12,6 +12,19 @@ class All extends Component {
       genreFilter: "",
       platformFilterActive: false,
       platformFilter: "",
+
+      "MMO": false,
+      "CardGame": false,
+      "MMORPG": false,
+      "Shooter": false,
+      "Strategy": false,
+      "MOBA": false,
+      "Racing": false,
+      "Sports": false,
+      "Social": false,
+      "Fighting": false,
+      "Browser": false,
+      "Windows": false,
     };
   }
 
@@ -36,6 +49,20 @@ class All extends Component {
   // #####################################################################
 
   searchPlatform = (input) => {
+    switch (input) {
+      case "Web Browser":
+        this.setState({ Browser: true })
+        this.setState({ Windows: false })
+        console.log(this.state.Browser)
+        break;
+      case "PC (Windows)":
+        this.setState({ Windows: true })
+        this.setState({ Browser: false })
+        console.log(this.state.Windows + "Card")
+        break;
+    }
+
+    this.setState()
     if (this.state.platformFilterActive === false) {
       if (input === "PC (Windows)" || input === "Web Browser") {
         console.log(input + "works")
@@ -75,7 +102,22 @@ class All extends Component {
     }
   }
 
-  removePlatform = () => {
+  // #####################################################################
+  // ####################      Platform Löschen      #####################
+  // #####################################################################
+
+  removePlatform = (input) => {
+    switch (input) {
+      case "Web Browser":
+        this.setState({ Browser: false })
+        console.log(this.state.Browser)
+        break;
+      case "PC (Windows)":
+        this.setState({ Windows: false })
+        console.log(this.state.Windows + "Card")
+        break;
+    }
+
     console.log(this.state.platformFilterActive)
     if (this.state.genreFilterActive == true && this.state.platformFilterActive == true) {
       let searchArrayPlatform = this.state.Data.filter((elt) => {
@@ -98,6 +140,140 @@ class All extends Component {
   // #####################################################################
 
   searchGenre = (input) => {
+
+    switch (input) {
+      case "MMO":
+        this.setState({ MMO: true })
+        this.setState({ CardGame: false })
+        this.setState({ MMORPG: false })
+        this.setState({ Shooter: false })
+        this.setState({ Strategy: false })
+        this.setState({ MOBA: false })
+        this.setState({ Racing: false })
+        this.setState({ Sports: false })
+        this.setState({ Social: false })
+        this.setState({ Fighting: false })
+        console.log(this.state.MMO)
+        break;
+      case "Card Game":
+        this.setState({ MMO: false })
+        this.setState({ CardGame: true })
+        this.setState({ MMORPG: false })
+        this.setState({ Shooter: false })
+        this.setState({ Strategy: false })
+        this.setState({ MOBA: false })
+        this.setState({ Racing: false })
+        this.setState({ Sports: false })
+        this.setState({ Social: false })
+        this.setState({ Fighting: false })
+        console.log(this.state.CardGame + "Card")
+        break;
+      case "MMORPG":
+        this.setState({ MMO: false })
+        this.setState({ CardGame: false })
+        this.setState({ MMORPG: true })
+        this.setState({ Shooter: false })
+        this.setState({ Strategy: false })
+        this.setState({ MOBA: false })
+        this.setState({ Racing: false })
+        this.setState({ Sports: false })
+        this.setState({ Social: false })
+        this.setState({ Fighting: false })
+        console.log(this.state.MMORPG)
+        break;
+      case "Shooter":
+        this.setState({ MMO: false })
+        this.setState({ CardGame: false })
+        this.setState({ MMORPG: false })
+        this.setState({ Shooter: true })
+        this.setState({ Strategy: false })
+        this.setState({ MOBA: false })
+        this.setState({ Racing: false })
+        this.setState({ Sports: false })
+        this.setState({ Social: false })
+        this.setState({ Fighting: false })
+        console.log(this.state.Shooter)
+        break;
+      case "Strategy":
+        this.setState({ MMO: false })
+        this.setState({ CardGame: false })
+        this.setState({ MMORPG: false })
+        this.setState({ Shooter: false })
+        this.setState({ Strategy: true })
+        this.setState({ MOBA: false })
+        this.setState({ Racing: false })
+        this.setState({ Sports: false })
+        this.setState({ Social: false })
+        this.setState({ Fighting: false })
+        console.log(this.state.Strategy)
+        break;
+      case "MOBA":
+        this.setState({ MMO: false })
+        this.setState({ CardGame: false })
+        this.setState({ MMORPG: false })
+        this.setState({ Shooter: false })
+        this.setState({ Strategy: false })
+        this.setState({ MOBA: true })
+        this.setState({ Racing: false })
+        this.setState({ Sports: false })
+        this.setState({ Social: false })
+        this.setState({ Fighting: false })
+        console.log(this.state.MOBA)
+        break;
+      case "Racing":
+        this.setState({ MMO: false })
+        this.setState({ CardGame: false })
+        this.setState({ MMORPG: false })
+        this.setState({ Shooter: false })
+        this.setState({ Strategy: false })
+        this.setState({ MOBA: false })
+        this.setState({ Racing: true })
+        this.setState({ Sports: false })
+        this.setState({ Social: false })
+        this.setState({ Fighting: false })
+        console.log(this.state.Racing)
+        break;
+      case "Sports":
+        this.setState({ MMO: false })
+        this.setState({ CardGame: false })
+        this.setState({ MMORPG: false })
+        this.setState({ Shooter: false })
+        this.setState({ Strategy: false })
+        this.setState({ MOBA: false })
+        this.setState({ Racing: false })
+        this.setState({ Sports: true })
+        this.setState({ Social: false })
+        this.setState({ Fighting: false })
+        console.log(this.state.Sports)
+        break;
+      case "Social":
+        this.setState({ MMO: false })
+        this.setState({ CardGame: false })
+        this.setState({ MMORPG: false })
+        this.setState({ Shooter: false })
+        this.setState({ Strategy: false })
+        this.setState({ MOBA: false })
+        this.setState({ Racing: false })
+        this.setState({ Sports: false })
+        this.setState({ Social: true })
+        this.setState({ Fighting: false })
+        console.log(this.state.Social)
+        break;
+      case "Fighting":
+        this.setState({ MMO: false })
+        this.setState({ CardGame: false })
+        this.setState({ MMORPG: false })
+        this.setState({ Shooter: false })
+        this.setState({ Strategy: false })
+        this.setState({ MOBA: false })
+        this.setState({ Racing: false })
+        this.setState({ Sports: false })
+        this.setState({ Social: false })
+        this.setState({ Fighting: true })
+        console.log(this.state.Fighting)
+        break;
+    }
+
     if (this.state.genreFilterActive == false) {
       let searchArrayGenre = this.state.workData.filter((elt) => {
         return elt.genre == input
@@ -131,7 +307,55 @@ class All extends Component {
     }
   }
 
-  removeGenre = () => {
+  // #####################################################################
+  // ####################         Genre Löschen      #####################
+  // #####################################################################
+
+  removeGenre = (input) => {
+
+    switch (input) {
+      case "MMO":
+        this.setState({ MMO: !this.state.MMO })
+        console.log(this.state.MMO)
+        break;
+      case "Card Game":
+        this.setState({ CardGame: !this.state.CardGame })
+        console.log(this.state.CardGame + "Card")
+        break;
+      case "MMORPG":
+        this.setState({ MMORPG: !this.state.MMORPG })
+        console.log(this.state.MMORPG)
+        break;
+      case "Shooter":
+        this.setState({ Shooter: !this.state.Shooter })
+        console.log(this.state.Shooter)
+        break;
+      case "Strategy":
+        this.setState({ Strategy: !this.state.Strategy })
+        console.log(this.state.Strategy)
+        break;
+      case "MOBA":
+        this.setState({ MOBA: !this.state.MOBA })
+        console.log(this.state.MOBA)
+        break;
+      case "Racing":
+        this.setState({ Racing: !this.state.Racing })
+        console.log(this.state.Racing)
+        break;
+      case "Sports":
+        this.setState({ Sports: !this.state.Sports })
+        console.log(this.state.Sports)
+        break;
+      case "Social":
+        this.setState({ Social: !this.state.Social })
+        console.log(this.state.Social)
+        break;
+      case "Fighting":
+        this.setState({ Fighting: !this.state.Fighting })
+        console.log(this.state.Fighting)
+        break;
+    }
+
     if (this.state.genreFilterActive == true && this.state.platformFilterActive == true) {
       let searchArrayGenre = this.state.Data.filter((elt) => {
         return elt.platform == this.state.platformFilter
@@ -150,33 +374,90 @@ class All extends Component {
     }
   }
 
+  // #####################################################################
+  // ####################         Menü ausklappen      #####################
+  // #####################################################################
+
+  categoryExpand = () => {
+    console.log("works")
+    document.getElementById("scrollbarGenre").classList.toggle("scrollbarActive")
+    document.getElementById("scrollbarGenre").classList.toggle("scrollbarPassive")
+  }
+
+  platformExpand = () => {
+    console.log("works")
+    document.getElementById("wrapperPlatform").classList.toggle("scrollbarPassive")
+  }
+
   render() {
     return (
       <section className="all-section">
         <header>
           <h1>All Games</h1>
         </header>
-        <div>
-          <button onClick={() => this.searchGenre("MMO")}>MMO</button>
-          <button onClick={() => this.searchGenre("Card Game")}>Card Game</button>
-          <button onClick={() => this.searchGenre("MMORPG")}>MMORPG</button>
-          <button onClick={() => this.searchGenre("Shooter")}>Shooter</button>
-          <button onClick={() => this.searchGenre("Strategy")}>Strategy</button>
-          <button onClick={() => this.searchGenre("MOBA")}>MOBA</button>
-          <button onClick={() => this.searchGenre("Racing")}>Racing</button>
-          <button onClick={() => this.searchGenre("Sports")}>Sports</button>
-          <button onClick={() => this.searchGenre("Social")}>Social</button>
-          <button onClick={() => this.searchGenre("Fighting")}>Fighting</button>
 
-          <button onClick={() => this.searchPlatform("Web Browser")}>Web Browser</button>
-          <button onClick={() => this.searchPlatform("PC (Windows)")}>PC (Windows)</button>
+
+
+
+        {// ########### Grid Section #############
+        }
+        <section className="items-wrap">
+          {// Dropdown Platform
+          }
+          <section className="dropDownWrapper">
+            <div className="dropdownBody">
+              <div onClick={() => this.platformExpand()} className="dropdownHeader">PLATFORM<img src="./img/arrow.svg" alt="V" /></div>
+              <div id="wrapperPlatform" className="scrollbar">
+                <div className="dropdownItem" onClick={this.state.Browser ? () => this.removePlatform("Web Browser") : () => this.searchPlatform("Web Browser")}><input type="checkbox" checked={this.state.Browser} />Web Browser</div>
+
+                <div className="dropdownItem" onClick={this.state.Windows ? () => this.removePlatform("PC (Windows)") : () => this.searchPlatform("PC (Windows)")}><input type="checkbox" checked={this.state.Windows} />PC (Windows)</div>
+              </div>
+            </div>
+          </section>
+          {// Dropdown Genre
+          }
+          <section className="dropDownWrapper">
+            <div className="dropdownBody">
+              <div className="dropdownHeader" onClick={() => this.categoryExpand()}>CATEGORY / TAG<img src="./img/arrow.svg" alt="V" /></div>
+              <div className="scrollbar scrollbarPassive" id="scrollbarGenre">
+                <div className="dropdownItem" onClick={this.state.MMO ? () => this.removeGenre("MMO") : () => this.searchGenre("MMO")}><input type="checkbox" checked={this.state.MMO} />MMO</div>
+
+                <div className="dropdownItem" onClick={this.state.CardGame ? () => this.removeGenre("Card Game") : () => this.searchGenre("Card Game")}><input type="checkbox" checked={this.state.CardGame} />Card Game</div>
+
+                <div className="dropdownItem" onClick={this.state.MMORPG ? () => this.removeGenre("MMORPG") : () => this.searchGenre("MMORPG")}><input type="checkbox" checked={this.state.MMORPG} />MMORPG</div>
+
+                <div className="dropdownItem" onClick={this.state.Shooter ? () => this.removeGenre("Shooter") : () => this.searchGenre("Shooter")}><input type="checkbox" checked={this.state.Shooter} />Shooter</div>
+
+                <div className="dropdownItem" onClick={this.state.Strategy ? () => this.removeGenre("Strategy") : () => this.searchGenre("Strategy")}><input type="checkbox" checked={this.state.Strategy} />Strategy</div>
+
+                <div className="dropdownItem" onClick={this.state.MOBA ? () => this.removeGenre("MOBA") : () => this.searchGenre("MOBA")}><input type="checkbox" checked={this.state.MOBA} />MOBA</div>
+
+                <div className="dropdownItem" onClick={this.state.Racing ? () => this.removeGenre("Racing") : () => this.searchGenre("Racing")}><input type="checkbox" checked={this.state.Racing} />Racing</div>
+
+                <div className="dropdownItem" onClick={this.state.Sports ? () => this.removeGenre("Sports") : () => this.searchGenre("Sports")}><input type="checkbox" checked={this.state.Sports} />Sports</div>
+
+                <div className="dropdownItem" onClick={this.state.Social ? () => this.removeGenre("Social") : () => this.searchGenre("Social")}><input type="checkbox" checked={this.state.Social} />Social</div>
+
+                <div className="dropdownItem" onClick={this.state.Fighting ? () => this.removeGenre("Fighting") : () => this.searchGenre("Fighting")}><input type="checkbox" checked={this.state.Fighting} />Fighting</div>
+              </div>
+            </div>
+          </section>
+          {// Dropdown Sort
+          }
+          <section className="dropDownWrapper">
+            <div className="dropdownHeader">SORT BY <img src="./img/arrow.svg" alt="V" /></div>
+          </section>
+
+          <section></section>
+        </section>
+        <section className="activeFilters">
           <h2 style={{
             display: this.state.platformFilterActive ? "block" : "none"
-          }}><button onClick={() => this.removePlatform()}>X</button>{this.state.platformFilter}</h2>
+          }}><button onClick={() => this.removePlatform(this.state.platformFilter)}>X</button>{this.state.platformFilter}</h2>
           <h2 style={{
             display: this.state.genreFilterActive ? "block" : "none"
-          }}><button onClick={() => this.removeGenre()}>X</button>{this.state.genreFilter}</h2>
-        </div>
+          }}><button onClick={() => this.removeGenre(this.state.genreFilter)}>X</button>{this.state.genreFilter}</h2>
+        </section>
         <section className="items-wrap">
           {this.state.workData.map((elt) => (
             <ListItemLong

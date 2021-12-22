@@ -32,22 +32,18 @@ class All extends Component {
         <header>
           <h1>All Games</h1>
         </header>
-        <section className="recent-added-section">
-          <h2>Recently Added</h2>
-          <article className="first-grid">
-            {this.state.Data.map((elt) => (
-              <ListItemLong
-                image={elt.thumbnail}
-                alt={elt.title}
-                title={elt.title}
-                short_description={elt.short_description}
-                id={elt.id}
-                platform={elt.platform}
-                genre={elt.genre}
-                key={elt.id}
-              />
-            ))}
-          </article>
+        <section className="items-wrap">
+          {this.state.Data.map((elt) => (
+            <ListItemLong
+              image={elt.thumbnail}
+              alt={elt.title}
+              title={elt.title}
+              id={elt.id}
+              platform={elt.platform}
+              genre={elt.genre}
+              key={elt.id}
+            />
+          ))}
         </section>
       </section>
     );

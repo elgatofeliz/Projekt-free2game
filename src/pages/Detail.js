@@ -15,8 +15,9 @@ class Detail extends Component {
     }
 
     componentDidMount() {
-        this.setState({ isLoading: true });
-        fetch("https://free-to-play-games-database.p.rapidapi.com/api/game?id=452", {
+        // this.setState({ isLoading: true });
+        let detailId = window.location.pathname.split('/')[2];
+        fetch(`https://free-to-play-games-database.p.rapidapi.com/api/game?id=${detailId}`, {
             method: "GET",
             headers: {
                 "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
@@ -26,24 +27,23 @@ class Detail extends Component {
             .then((response) => response.json())
             .then((data) => {
                 this.setState({ gameData: data, isLoading: false }, () => {
-                    console.log(this.state.gameData.screenshots);
-                    console.log(this.state.gameData);
+
                 });
                 this.setState({ systemReq: data.minimum_system_requirements }, () => {
-                    console.log(this.state.systemReq)
                 });
                 this.setState({ screenshots: data.screenshots }, () => {
-                    console.log(this.state.screenshots)
                 });
             })
             .catch((err) => console.log(err));
     }
     render() {
-        if (this.state.isLoading == true) {
-            return <p>Loading...</p>
-        }
+
+
+        // if (this.state.isLoading == true) {
+        //     return <p>Loading...</p>
+        // }
         return (
-            <div>
+            <React.Fragment>
                 <DetailList
                     title={this.state.gameData.title}
                     game_url={this.state.gameData.game_url}
@@ -51,6 +51,7 @@ class Detail extends Component {
                     platform={this.state.gameData.platform}
                     genre={this.state.gameData.genre}
                     description={this.state.gameData.description}
+                    game_url={this.state.gameData.game_url}
                     //image1={this.state.screenshots[0].image}
                     //image2={this.state.screenshots[1].image}
                     //image3={this.state.screenshots[2].image}
@@ -63,10 +64,10 @@ class Detail extends Component {
                     graphics={this.state.systemReq.graphics}
                     storage={this.state.systemReq.storage}
                 />
-            </div>
+            </React.Fragment>
         );
     }
 
-}
+};
 
 export default Detail;

@@ -15,18 +15,18 @@ class All extends Component {
       sortedFilterActive: false,
       sortedFilter: "",
 
-      "MMO": false,
-      "CardGame": false,
-      "MMORPG": false,
-      "Shooter": false,
-      "Strategy": false,
-      "MOBA": false,
-      "Racing": false,
-      "Sports": false,
-      "Social": false,
-      "Fighting": false,
-      "Browser": false,
-      "Windows": false,
+      MMO: false,
+      CardGame: false,
+      MMORPG: false,
+      Shooter: false,
+      Strategy: false,
+      MOBA: false,
+      Racing: false,
+      Sports: false,
+      Social: false,
+      Fighting: false,
+      Browser: false,
+      Windows: false,
 
       Relevance: false,
       Popularity: false,
@@ -60,8 +60,9 @@ class All extends Component {
   // #####################################################################
 
   searchPlatform = (input) => {
-
-    document.getElementById("wrapperPlatform").classList.toggle("scrollbarPassive")
+    document
+      .getElementById("wrapperPlatform")
+      .classList.toggle("scrollbarPassive");
 
     switch (input) {
       case "Web Browser":
@@ -125,8 +126,9 @@ class All extends Component {
   // #####################################################################
 
   removePlatform = (input) => {
-
-    document.getElementById("wrapperPlatform").classList.add("scrollbarPassive")
+    document
+      .getElementById("wrapperPlatform")
+      .classList.add("scrollbarPassive");
 
     switch (input) {
       case "Web Browser":
@@ -167,9 +169,12 @@ class All extends Component {
   // #####################################################################
 
   searchGenre = (input) => {
-
-    document.getElementById("scrollbarGenre").classList.toggle("scrollbarActive")
-    document.getElementById("scrollbarGenre").classList.toggle("scrollbarPassive")
+    document
+      .getElementById("scrollbarGenre")
+      .classList.toggle("scrollbarActive");
+    document
+      .getElementById("scrollbarGenre")
+      .classList.toggle("scrollbarPassive");
 
     switch (input) {
       case "MMO":
@@ -347,9 +352,10 @@ class All extends Component {
   // #####################################################################
 
   removeGenre = (input) => {
-
-    document.getElementById("scrollbarGenre").classList.remove("scrollbarActive")
-    document.getElementById("scrollbarGenre").classList.add("scrollbarPassive")
+    document
+      .getElementById("scrollbarGenre")
+      .classList.remove("scrollbarActive");
+    document.getElementById("scrollbarGenre").classList.add("scrollbarPassive");
 
     switch (input) {
       case "MMO":
@@ -424,45 +430,46 @@ class All extends Component {
   // #####################################################################
 
   sortGames = (input) => {
+    document.getElementById("scrollbarSort").classList.add("scrollbarPassive");
 
-    document.getElementById("scrollbarSort").classList.add("scrollbarPassive")
-
-    this.setState({ sortedFilterActive: true })
-    this.setState({ sortedFilter: input })
+    this.setState({ sortedFilterActive: true });
+    this.setState({ sortedFilter: input });
 
     switch (input) {
-
       case "Relevance":
-        this.setState({ Relevance: true })
-        this.setState({ ReleaseDate: false })
-        this.setState({ Popularity: false })
-        this.setState({ Alphabetical: false })
+        this.setState({ Relevance: true });
+        this.setState({ ReleaseDate: false });
+        this.setState({ Popularity: false });
+        this.setState({ Alphabetical: false });
 
         let sortedRelevance = this.state.workData.sort((a, b) => {
-          return a.id - b.id
-        })
-        this.setState({ workData: sortedRelevance })
-        console.log(this.state.workData)
+          return a.id - b.id;
+        });
+        this.setState({ workData: sortedRelevance });
+        console.log(this.state.workData);
         break;
 
       case "Release Date":
-        this.setState({ Relevance: false })
-        this.setState({ ReleaseDate: true })
-        this.setState({ Popularity: false })
-        this.setState({ Alphabetical: false })
+        this.setState({ Relevance: false });
+        this.setState({ ReleaseDate: true });
+        this.setState({ Popularity: false });
+        this.setState({ Alphabetical: false });
 
         let sortedReleaseDate = this.state.workData.sort((a, b) => {
-          return new Date(a.release_date.split("-").join(",")).getTime() - new Date(b.release_date.split("-").join(",")).getTime()
-        })
-        this.setState({ workData: sortedReleaseDate })
-        console.log(this.state.workData)
+          return (
+            new Date(a.release_date.split("-").join(",")).getTime() -
+            new Date(b.release_date.split("-").join(",")).getTime()
+          );
+        });
+        this.setState({ workData: sortedReleaseDate });
+        console.log(this.state.workData);
         break;
 
       case "Alphabetical":
-        this.setState({ Relevance: false })
-        this.setState({ ReleaseDate: false })
-        this.setState({ Popularity: false })
-        this.setState({ Alphabetical: true })
+        this.setState({ Relevance: false });
+        this.setState({ ReleaseDate: false });
+        this.setState({ Popularity: false });
+        this.setState({ Alphabetical: true });
 
         let sortedAlphabetical = this.state.workData.sort((a, b) => {
           if (a.title < b.title) {
@@ -472,57 +479,64 @@ class All extends Component {
             return 1;
           }
           return 0;
-        })
-        this.setState({ workData: sortedAlphabetical })
-        console.log(this.state.workData)
+        });
+        this.setState({ workData: sortedAlphabetical });
+        console.log(this.state.workData);
         break;
+      default:
     }
-  }
+  };
 
   removeSort = () => {
+    document.getElementById("scrollbarSort").classList.add("scrollbarPassive");
 
-    document.getElementById("scrollbarSort").classList.add("scrollbarPassive")
-
-    this.setState({ sortedFilterActive: false })
-    this.setState({ Relevance: false })
-    this.setState({ Alphabetical: false })
-    this.setState({ ReleaseDate: false })
-    this.setState({ sortedFilter: "" })
+    this.setState({ sortedFilterActive: false });
+    this.setState({ Relevance: false });
+    this.setState({ Alphabetical: false });
+    this.setState({ ReleaseDate: false });
+    this.setState({ sortedFilter: "" });
     let sortedRelevance = this.state.workData.sort((a, b) => {
-      return a.id - b.id
-    })
-    this.setState({ workData: sortedRelevance })
-  }
+      return a.id - b.id;
+    });
+    this.setState({ workData: sortedRelevance });
+  };
 
   // #####################################################################
   // ####################         Menü ausklappen      #####################
   // #####################################################################
-
   categoryExpand = () => {
-    console.log("works")
-    document.getElementById("scrollbarGenre").classList.toggle("scrollbarActive")
-    document.getElementById("scrollbarGenre").classList.toggle("scrollbarPassive")
-    document.getElementById("wrapperPlatform").classList.add("scrollbarPassive")
-    document.getElementById("scrollbarSort").classList.add("scrollbarPassive")
+    console.log("works");
+    document
+      .getElementById("scrollbarGenre")
+      .classList.toggle("scrollbarActive");
+    document
+      .getElementById("scrollbarGenre")
+      .classList.toggle("scrollbarPassive");
     document.getElementById("vCategory").classList.toggle("v-active");
-  }
+  };
 
   platformExpand = () => {
-    console.log("works")
-    document.getElementById("scrollbarGenre").classList.remove("scrollbarActive")
-    document.getElementById("scrollbarGenre").classList.add("scrollbarPassive")
-    document.getElementById("wrapperPlatform").classList.toggle("scrollbarPassive")
-    document.getElementById("scrollbarSort").classList.add("scrollbarPassive")
+    console.log("works");
+    document
+      .getElementById("wrapperPlatform")
+      .classList.toggle("scrollbarPassive");
     document.getElementById("vPlatform").classList.toggle("v-active");
-  }
+  };
 
   sortExpand = () => {
-    document.getElementById("scrollbarSort").classList.toggle("scrollbarPassive")
-    document.getElementById("scrollbarGenre").classList.remove("scrollbarActive")
-    document.getElementById("scrollbarGenre").classList.add("scrollbarPassive")
-    document.getElementById("wrapperPlatform").classList.add("scrollbarPassive")
+    document
+      .getElementById("scrollbarSort")
+      .classList.toggle("scrollbarPassive");
+    document
+      .getElementById("scrollbarGenre")
+      .classList.remove("scrollbarActive");
+    document.getElementById("vSort").classList.toggle("v-active");
 
-  }
+    document.getElementById("scrollbarGenre").classList.add("scrollbarPassive");
+    document
+      .getElementById("wrapperPlatform")
+      .classList.add("scrollbarPassive");
+  };
 
   // #####################################################################
   // ####################         Menü ausklappen      #####################
@@ -540,34 +554,58 @@ class All extends Component {
         }
 
         <section className="items-wrap">
-          {/* ############################################ */}
-
+          {/* ###################################################### */}
           {
             // Dropdown Platform
           }
           <article className="dropDownWrapper">
             <div className="dropdownBody">
-              <div onClick={() => this.platformExpand()} className="dropdownHeader" >PLATFORM<img id="vPlatform" src="./img/arrow.svg" alt="V" /></div>
+              <div
+                onClick={() => this.platformExpand()}
+                className="dropdownHeader"
+              >
+                PLATFORM
+                <img id="vPlatform" src="./img/arrow.svg" alt="V" />
+              </div>
               <div id="wrapperPlatform" className="scrollbar scrollbarPassive">
-                <div className="dropdownItem" onClick={this.state.Browser ? () => this.removePlatform("Web Browser") : () => this.searchPlatform("Web Browser")}>
-                  <input type="checkbox" checked={this.state.Browser} />Web Browser</div>
-
-                <div className="dropdownItem" onClick={
-                  this.state.Windows
-                    ? () => this.removePlatform("PC (Windows)")
-                    : () => this.searchPlatform("PC (Windows)")
-                }
+                <div
+                  className="dropdownItem"
+                  onClick={
+                    this.state.Browser
+                      ? () => this.removePlatform("Web Browser")
+                      : () => this.searchPlatform("Web Browser")
+                  }
                 >
-                  <input type="checkbox" checked={this.state.Windows} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Browser}
+                  />
+                  Web Browser
+                </div>
+
+                <div
+                  className="dropdownItem"
+                  onClick={
+                    this.state.Windows
+                      ? () => this.removePlatform("PC (Windows)")
+                      : () => this.searchPlatform("PC (Windows)")
+                  }
+                >
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Windows}
+                  />
                   PC (Windows)
                 </div>
               </div>
             </div>
-          </article >
+          </article>
           {
             // Dropdown Genre
           }
-          < article className="dropDownWrapper" >
+          <article className="dropDownWrapper">
             <div className="dropdownBody">
               <div
                 className="dropdownHeader"
@@ -585,7 +623,11 @@ class All extends Component {
                       : () => this.searchGenre("MMO")
                   }
                 >
-                  <input type="checkbox" checked={this.state.MMO} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.MMO}
+                  />
                   MMO
                 </div>
 
@@ -597,7 +639,11 @@ class All extends Component {
                       : () => this.searchGenre("Card Game")
                   }
                 >
-                  <input type="checkbox" checked={this.state.CardGame} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.CardGame}
+                  />
                   Card Game
                 </div>
 
@@ -609,7 +655,11 @@ class All extends Component {
                       : () => this.searchGenre("MMORPG")
                   }
                 >
-                  <input type="checkbox" checked={this.state.MMORPG} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.MMORPG}
+                  />
                   MMORPG
                 </div>
 
@@ -621,7 +671,11 @@ class All extends Component {
                       : () => this.searchGenre("Shooter")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Shooter} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Shooter}
+                  />
                   Shooter
                 </div>
 
@@ -633,7 +687,11 @@ class All extends Component {
                       : () => this.searchGenre("Strategy")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Strategy} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Strategy}
+                  />
                   Strategy
                 </div>
 
@@ -645,7 +703,11 @@ class All extends Component {
                       : () => this.searchGenre("MOBA")
                   }
                 >
-                  <input type="checkbox" checked={this.state.MOBA} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.MOBA}
+                  />
                   MOBA
                 </div>
 
@@ -657,7 +719,11 @@ class All extends Component {
                       : () => this.searchGenre("Racing")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Racing} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Racing}
+                  />
                   Racing
                 </div>
 
@@ -669,7 +735,11 @@ class All extends Component {
                       : () => this.searchGenre("Sports")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Sports} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Sports}
+                  />
                   Sports
                 </div>
 
@@ -681,7 +751,11 @@ class All extends Component {
                       : () => this.searchGenre("Social")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Social} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Social}
+                  />
                   Social
                 </div>
 
@@ -693,44 +767,115 @@ class All extends Component {
                       : () => this.searchGenre("Fighting")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Fighting} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Fighting}
+                  />
                   Fighting
                 </div>
               </div>
             </div>
-          </article >
+          </article>
           {
             // Dropdown Sort
           }
-          < section className="dropDownWrapper" >
+          <article className="dropDownWrapper">
             <div className="dropdownBody">
-              <div className="dropdownHeader" onClick={() => this.sortExpand()}>SORT BY <img src="./img/arrow.svg" alt="V" /></div>
+              <div className="dropdownHeader" onClick={() => this.sortExpand()}>
+                SORT BY <img id="vSort" src="./img/arrow.svg" alt="V" />
+              </div>
               <div className="scrollbar scrollbarPassive" id="scrollbarSort">
+                <div
+                  className="dropdownItem"
+                  onClick={
+                    this.state.Relevance
+                      ? () => this.removeSort("Relevance")
+                      : () => this.sortGames("Relevance")
+                  }
+                >
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Relevance}
+                  />
+                  Relevance
+                </div>
 
-                <div className="dropdownItem" onClick={this.state.Relevance ? () => this.removeSort("Relevance") : () => this.sortGames("Relevance")}><input type="checkbox" checked={this.state.Relevance} />Relevance</div>
+                <div
+                  className="dropdownItem"
+                  onClick={
+                    this.state.ReleaseDate
+                      ? () => this.removeSort("Release Date")
+                      : () => this.sortGames("Release Date")
+                  }
+                >
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.ReleaseDate}
+                  />
+                  Release Date
+                </div>
 
-                <div className="dropdownItem" onClick={this.state.ReleaseDate ? () => this.removeSort("Release Date") : () => this.sortGames("Release Date")}><input type="checkbox" checked={this.state.ReleaseDate} />Release Date</div>
-
-                <div className="dropdownItem" onClick={this.state.Alphabetical ? () => this.removeSort("Alphabetical") : () => this.sortGames("Alphabetical")}><input type="checkbox" checked={this.state.Alphabetical} />Alphabetical</div>
+                <div
+                  className="dropdownItem"
+                  onClick={
+                    this.state.Alphabetical
+                      ? () => this.removeSort("Alphabetical")
+                      : () => this.sortGames("Alphabetical")
+                  }
+                >
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Alphabetical}
+                  />
+                  Alphabetical
+                </div>
               </div>
             </div>
-          </section >
+          </article>
 
-          <section></section>
-        </section >
-        <section className="activeFilters">
-          <h2 style={{
-            display: this.state.platformFilterActive ? "block" : "none"
-          }}><button onClick={() => this.removePlatform(this.state.platformFilter)}>X</button>{this.state.platformFilter}</h2>
-          <h2 style={{
-            display: this.state.genreFilterActive ? "block" : "none"
-          }}><button onClick={() => this.removeGenre(this.state.genreFilter)}>X</button>{this.state.genreFilter}</h2>
-          <h2 style={{
-            display: this.state.sortedFilterActive ? "block" : "none"
-          }}><button onClick={() => this.removeSort(this.state.sortedFilter)}>X</button>{this.state.sortedFilter}</h2>
-          <button onClick={() => this.searchKeyword("Legends")}>war</button>
-        </section>
-        <section className="items-wrap">
+          <article></article>
+          <article className="activeFilters">
+            <h3
+              className="redRing"
+              style={{
+                display: this.state.platformFilterActive ? "block" : "none",
+              }}
+            >
+              <button
+                onClick={() => this.removePlatform(this.state.platformFilter)}
+              >
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+              {this.state.platformFilter}
+            </h3>
+            <h3
+              className="redRing"
+              style={{
+                display: this.state.genreFilterActive ? "block" : "none",
+              }}
+            >
+              <button onClick={() => this.removeGenre(this.state.genreFilter)}>
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+              {this.state.genreFilter}
+            </h3>
+            <h3
+              className="redRing"
+              style={{
+                display: this.state.sortedFilterActive ? "block" : "none",
+              }}
+            >
+              <button onClick={() => this.removeSort(this.state.sortedFilter)}>
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+              {this.state.sortedFilter}
+            </h3>
+          </article>
+          {/* ###################################################### */}
           {this.state.workData.map((elt) => (
             <ListItemLong
               image={elt.thumbnail}
@@ -744,7 +889,7 @@ class All extends Component {
             />
           ))}
         </section>
-      </section >
+      </section>
     );
   }
 }

@@ -18,11 +18,10 @@
   height: 0px;
 }
 
-#searchPosition{
+#searchPosition {
   position: relative;
   display: block;
 }
-
 
 #scrollbarSearch {
   height: 200px;
@@ -35,26 +34,30 @@
   background: #102130;
   border-radius: 12px;
 
-  .dropdownItemSearch{
+  .dropdownItemSearch {
     background-color: #375470;
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 3% 3%;
+    margin: 3%;
     border-radius: 10px;
     display: flex;
+    justify-content: center;
+    h3 {
+      text-align: left;
+    }
     &:hover {
       cursor: pointer;
     }
   }
 }
 
-#searchFlex{
+#searchFlex {
   flex-wrap: wrap;
   justify-content: center;
 }
 
-#imageWrapper{
+#imageWrapper {
   width: 225px;
-  >img{
+  > img {
     width: 100%;
   }
 }
@@ -173,5 +176,15 @@
       position: static;
       margin: 5% 0;
     }
+  }
+
+  .dropdownItemSearch {
+    width: fit-content;
+    #imageWrapper {
+      width: 100%;
+    }
+  }
+  #searchPosition {
+    text-align: right;
   }
 }

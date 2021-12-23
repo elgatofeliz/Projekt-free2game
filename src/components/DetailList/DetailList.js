@@ -21,7 +21,7 @@ const DetailList = (props) => {
       <img className="imgNoDrei" src={props.image2} alt="" />
       <img className="imgNoVier" src={props.image3} alt="" />
       <article className="thirdArticleGrid">
-        <h2>Additinal Information</h2>
+        <h2>Additional Information</h2>
         <p>
           Please note free-to-play game many or many not offer optional in-game
           purchases.

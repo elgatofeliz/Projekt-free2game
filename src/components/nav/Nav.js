@@ -52,7 +52,6 @@ class Nav extends Component {
       if (x !== -1) {
         searchArray.push(elt);
       }
-      return x;
     });
     if (searchArray.length === 366) {
       this.setState({ searchActive: false });

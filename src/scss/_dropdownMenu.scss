@@ -21,6 +21,48 @@
 .scrollbarPassive {
   height: 0px;
 }
+
+#searchPosition{
+  position: relative;
+  display: block;
+}
+
+
+#scrollbarSearch {
+  height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: 0.2s;
+  font-family: Oswald, sans-serif;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  background: #102130;
+  border-radius: 12px;
+
+  .dropdownItemSearch{
+    background-color: #375470;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+#searchFlex{
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#imageWrapper{
+  width: 225px;
+  >img{
+    width: 100%;
+  }
+}
+
 .dropDownWrapper {
   position: relative;
 
@@ -52,11 +94,11 @@
     border-radius: 12px;
 
     .dropdownItem {
-      display: block;
       background-color: #375470;
       padding: 10px 20px;
       margin: 10px;
       border-radius: 10px;
+      display: block;
       &:hover {
         cursor: pointer;
       }

@@ -524,6 +524,10 @@ class All extends Component {
 
   }
 
+  // #####################################################################
+  // ####################         Menü ausklappen      #####################
+  // #####################################################################
+
   render() {
     return (
       <section className="all-section">
@@ -724,6 +728,7 @@ class All extends Component {
           <h2 style={{
             display: this.state.sortedFilterActive ? "block" : "none"
           }}><button onClick={() => this.removeSort(this.state.sortedFilter)}>X</button>{this.state.sortedFilter}</h2>
+          <button onClick={() => this.searchKeyword("Legends")}>war</button>
         </section>
         <section className="items-wrap">
           {this.state.workData.map((elt) => (

@@ -1,11 +1,33 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import React, { Component } from "react";
 
 class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      Data: [],
+      workData: [],
+      searchActive: false,
+    };
   }
+
+  componentDidMount() {
+    fetch("https://free-to-play-games-database.p.rapidapi.com/api/games", {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com",
+        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ Data: data }, () => {
+          console.log(this.state.Data);
+        });
+      })
+      .catch((err) => console.log(err));
+  }
+
   showSettings() {
     let menu = document.querySelector(".sidebar-nav");
     let burger = document.querySelector(".burger");
@@ -20,6 +42,36 @@ class Nav extends Component {
     topNav.classList.toggle("unactive-top");
     menuNav.classList.toggle("mobile-show");
   }
+
+  searchKeyword = () => {
+    let input = document.getElementById("searchInput").value
+    let searchArray = []
+    this.state.Data.map(elt => {
+      let x = elt.title.toLowerCase().search(input.toLowerCase())
+      if (x != -1) {
+        searchArray.push(elt)
+      }
+    })
+    if (searchArray.length === 366) {
+      this.setState({ searchActive: false })
+      this.setState({ workData: [] })
+    } else {
+      this.setState({ searchActive: true })
+      this.setState({ workData: searchArray })
+    }
+
+    console.log(searchArray)
+  }
+
+  searchKeywordClear = () => {
+    this.setState({ searchActive: false })
+    this.setState({ workdata: [] })
+    document.getElementById("searchInput").value = ""
+    window.location.reload()
+  }
+
+
+
   render() {
     return (
       <nav>
@@ -71,11 +123,34 @@ class Nav extends Component {
             </NavLink>
             <p>FREE2GAME</p>
           </div>
-          <div>
-            <input type="text" name="searchInput" id="searchInput" />
+          <div id="searchPosition">
+            <input type="text" name="searchInput" id="searchInput" onChange={() => this.searchKeyword()} />
+            <article className="dropdownWrapper">
+
+              <article className="dropdownBody">
+                <article id="scrollbarSearch" style={{
+                  height: this.state.searchActive ? "300px" : "0px"
+                }}>
+                  {this.state.workData.map((elt) => (
+                    <article className="dropdownItemSearch">
+                      <article id="searchFlex">
+                        <Link to={`/details/${elt.id}`} onClick={() => this.searchKeywordClear()} onClick={(() => this.refreshPage())}>
+                          <h3>{elt.title}</h3>
+                          <div id="imageWrapper">
+                            <img src={elt.thumbnail} alt={elt.title} />
+                          </div>
+                        </Link>
+                      </article>
+
+                    </article>
+                  ))}
+                </article>
+              </article>
+            </article>
           </div>
+
         </section>
-      </nav>
+      </nav >
     );
   }
 }

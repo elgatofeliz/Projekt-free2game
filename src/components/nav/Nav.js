@@ -49,8 +49,9 @@ class Nav extends Component {
     this.state.Data.map((elt) => {
       let x = elt.title.toLowerCase().search(input.toLowerCase());
       if (x !== -1) {
-        return searchArray.push(elt);
+        searchArray.push(elt);
       }
+      return;
     });
     if (searchArray.length === 366) {
       this.setState({ searchActive: false });
@@ -141,8 +142,10 @@ class Nav extends Component {
                       <article id="searchFlex">
                         <Link
                           to={`/details/${elt.id}`}
-                          onClick={() => this.searchKeywordClear()}
-                          onClick={() => this.refreshPage()}
+                          onClick={
+                            (() => this.searchKeywordClear(),
+                            () => this.refreshPage())
+                          }
                         >
                           <h3>{elt.title}</h3>
                           <div id="imageWrapper">

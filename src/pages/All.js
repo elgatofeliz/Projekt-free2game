@@ -572,7 +572,11 @@ class All extends Component {
                       : () => this.searchPlatform("Web Browser")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Browser} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Browser}
+                  />
                   Web Browser
                 </div>
 
@@ -584,7 +588,11 @@ class All extends Component {
                       : () => this.searchPlatform("PC (Windows)")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Windows} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Windows}
+                  />
                   PC (Windows)
                 </div>
               </div>
@@ -611,7 +619,11 @@ class All extends Component {
                       : () => this.searchGenre("MMO")
                   }
                 >
-                  <input type="checkbox" checked={this.state.MMO} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.MMO}
+                  />
                   MMO
                 </div>
 
@@ -623,7 +635,11 @@ class All extends Component {
                       : () => this.searchGenre("Card Game")
                   }
                 >
-                  <input type="checkbox" checked={this.state.CardGame} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.CardGame}
+                  />
                   Card Game
                 </div>
 
@@ -635,7 +651,11 @@ class All extends Component {
                       : () => this.searchGenre("MMORPG")
                   }
                 >
-                  <input type="checkbox" checked={this.state.MMORPG} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.MMORPG}
+                  />
                   MMORPG
                 </div>
 
@@ -647,7 +667,11 @@ class All extends Component {
                       : () => this.searchGenre("Shooter")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Shooter} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Shooter}
+                  />
                   Shooter
                 </div>
 
@@ -659,7 +683,11 @@ class All extends Component {
                       : () => this.searchGenre("Strategy")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Strategy} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Strategy}
+                  />
                   Strategy
                 </div>
 
@@ -671,7 +699,11 @@ class All extends Component {
                       : () => this.searchGenre("MOBA")
                   }
                 >
-                  <input type="checkbox" checked={this.state.MOBA} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.MOBA}
+                  />
                   MOBA
                 </div>
 
@@ -683,7 +715,11 @@ class All extends Component {
                       : () => this.searchGenre("Racing")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Racing} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Racing}
+                  />
                   Racing
                 </div>
 
@@ -695,7 +731,11 @@ class All extends Component {
                       : () => this.searchGenre("Sports")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Sports} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Sports}
+                  />
                   Sports
                 </div>
 
@@ -707,7 +747,11 @@ class All extends Component {
                       : () => this.searchGenre("Social")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Social} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Social}
+                  />
                   Social
                 </div>
 
@@ -719,7 +763,11 @@ class All extends Component {
                       : () => this.searchGenre("Fighting")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Fighting} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Fighting}
+                  />
                   Fighting
                 </div>
               </div>
@@ -742,7 +790,11 @@ class All extends Component {
                       : () => this.sortGames("Relevance")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Relevance} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Relevance}
+                  />
                   Relevance
                 </div>
 
@@ -754,7 +806,11 @@ class All extends Component {
                       : () => this.sortGames("Release Date")
                   }
                 >
-                  <input type="checkbox" checked={this.state.ReleaseDate} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.ReleaseDate}
+                  />
                   Release Date
                 </div>
 
@@ -766,7 +822,11 @@ class All extends Component {
                       : () => this.sortGames("Alphabetical")
                   }
                 >
-                  <input type="checkbox" checked={this.state.Alphabetical} />
+                  <input
+                    className="myinput"
+                    type="checkbox"
+                    checked={this.state.Alphabetical}
+                  />
                   Alphabetical
                 </div>
               </div>

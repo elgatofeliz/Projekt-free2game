@@ -48,10 +48,10 @@ class Nav extends Component {
     let searchArray = [];
     this.state.Data.map((elt) => {
       let x = elt.title.toLowerCase().search(input.toLowerCase());
+
       if (x !== -1) {
         searchArray.push(elt);
       }
-      return null;
     });
     if (searchArray.length === 366) {
       this.setState({ searchActive: false });
@@ -62,6 +62,7 @@ class Nav extends Component {
     }
 
     console.log(searchArray);
+    return null;
   };
 
   searchKeywordClear = () => {

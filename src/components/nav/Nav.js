@@ -44,33 +44,31 @@ class Nav extends Component {
   }
 
   searchKeyword = () => {
-    let input = document.getElementById("searchInput").value
-    let searchArray = []
-    this.state.Data.map(elt => {
-      let x = elt.title.toLowerCase().search(input.toLowerCase())
-      if (x != -1) {
-        searchArray.push(elt)
+    let input = document.getElementById("searchInput").value;
+    let searchArray = [];
+    this.state.Data.map((elt) => {
+      let x = elt.title.toLowerCase().search(input.toLowerCase());
+      if (x !== -1) {
+        return searchArray.push(elt);
       }
-    })
+    });
     if (searchArray.length === 366) {
-      this.setState({ searchActive: false })
-      this.setState({ workData: [] })
+      this.setState({ searchActive: false });
+      this.setState({ workData: [] });
     } else {
-      this.setState({ searchActive: true })
-      this.setState({ workData: searchArray })
+      this.setState({ searchActive: true });
+      this.setState({ workData: searchArray });
     }
 
-    console.log(searchArray)
-  }
+    console.log(searchArray);
+  };
 
   searchKeywordClear = () => {
-    this.setState({ searchActive: false })
-    this.setState({ workdata: [] })
-    document.getElementById("searchInput").value = ""
-    window.location.reload()
-  }
-
-
+    this.setState({ searchActive: false });
+    this.setState({ workdata: [] });
+    document.getElementById("searchInput").value = "";
+    window.location.reload();
+  };
 
   render() {
     return (
@@ -124,33 +122,42 @@ class Nav extends Component {
             <p>FREE2GAME</p>
           </div>
           <div id="searchPosition">
-            <input type="text" name="searchInput" id="searchInput" onChange={() => this.searchKeyword()} />
+            <input
+              type="text"
+              name="searchInput"
+              id="searchInput"
+              onChange={() => this.searchKeyword()}
+            />
             <article className="dropdownWrapper">
-
               <article className="dropdownBody">
-                <article id="scrollbarSearch" style={{
-                  height: this.state.searchActive ? "300px" : "0px"
-                }}>
+                <article
+                  id="scrollbarSearch"
+                  style={{
+                    height: this.state.searchActive ? "300px" : "0",
+                  }}
+                >
                   {this.state.workData.map((elt) => (
                     <article className="dropdownItemSearch">
                       <article id="searchFlex">
-                        <Link to={`/details/${elt.id}`} onClick={() => this.searchKeywordClear()} onClick={(() => this.refreshPage())}>
+                        <Link
+                          to={`/details/${elt.id}`}
+                          onClick={() => this.searchKeywordClear()}
+                          onClick={() => this.refreshPage()}
+                        >
                           <h3>{elt.title}</h3>
                           <div id="imageWrapper">
                             <img src={elt.thumbnail} alt={elt.title} />
                           </div>
                         </Link>
                       </article>
-
                     </article>
                   ))}
                 </article>
               </article>
             </article>
           </div>
-
         </section>
-      </nav >
+      </nav>
     );
   }
 }

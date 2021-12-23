@@ -46,7 +46,7 @@ class Nav extends Component {
   searchKeyword = () => {
     let input = document.getElementById("searchInput").value;
     let searchArray = [];
-    this.state.Data.map((elt) => {
+    this.state.Data.forEach((elt) => {
       let x = elt.title.toLowerCase().search(input.toLowerCase());
 
       if (x !== -1) {

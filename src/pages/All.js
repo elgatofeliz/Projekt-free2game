@@ -483,6 +483,7 @@ class All extends Component {
         this.setState({ workData: sortedAlphabetical });
         console.log(this.state.workData);
         break;
+      default:
     }
   };
 

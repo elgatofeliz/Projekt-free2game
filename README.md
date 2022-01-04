@@ -1,7 +1,6 @@
 Free 2 Game webpage;
 
 Midterm exam of SuperCode Bootcamp // final exam of front-end part.
-
 Teamwork with 3 other students.
 
 I mainly contributed the code of the searching feature in the 

@@ -10,6 +10,15 @@ I mainly contributed the code of the searching feature in the
 
 /src/components/nav/Nav.js
 
+Thanks to all Team members for this great project!!
+
+https://github.com/DennSerrano
+
+https://github.com/MaxBePunkt
+
+https://github.com/mz686
+
+
 https://elgatofeliz.github.io/Projekt-free2game/
 
 HAPPY GAMING :)

@@ -20,7 +20,7 @@ https://github.com/mz686
 HAPPY GAMING :)
 
 
-https://elgatofeliz.github.io/Projekt-free2game/
+https://free2game.netlify.app/
 
 
 

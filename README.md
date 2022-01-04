@@ -5,6 +5,7 @@ Teamwork with 3 other students.
 I mainly contributed the code of the searching feature in the 
 
 /src/pages/All.js and
+
 /src/components/nav/Nav.js
 
 https://elgatofeliz.github.io/Projekt-free2game/

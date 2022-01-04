@@ -1,3 +1,15 @@
+Free 2 Game webpage;
+
+Midterm exam of SuperCode Bootcamp, final exam of front-end part.
+Teamwork with 3 other students.
+I mainly contributed the code of the searching feature in the 
+
+/src/pages/All.js and
+/src/components/nav/Nav.js
+
+HAPPY GAMING :)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

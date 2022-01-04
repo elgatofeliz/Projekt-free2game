@@ -8,6 +8,7 @@ I mainly contributed the code of the searching feature in the
 /src/components/nav/Nav.js
 
 https://elgatofeliz.github.io/Projekt-free2game/
+
 HAPPY GAMING :)
 
 

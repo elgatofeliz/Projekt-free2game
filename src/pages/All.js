@@ -6,15 +6,29 @@ class All extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      
+
+// the idea is: full fetch gets saved in Data as backup and
+// workData is the fetch that is being filtered and therefore reduced
+// if a filter is being removed, again workData is being set to the 
+// initial data state that has been saved to Data. Now 
+// - if another filter was still active  - this filter is being identified by
+// the states and applied again in workData.
+      
       Data: [],
       workData: [],
+      
+// These states show if / which filters are active      
+      
       genreFilterActive: false,
       genreFilter: "",
       platformFilterActive: false,
       platformFilter: "",
       sortedFilterActive: false,
       sortedFilter: "",
-
+      
+//These states are used for dropdown checkboxes
+      
       MMO: false,
       CardGame: false,
       MMORPG: false,
@@ -27,14 +41,18 @@ class All extends Component {
       Fighting: false,
       Browser: false,
       Windows: false,
-
+      
+//These states are used for sort methods
+      
       Relevance: false,
       Popularity: false,
       ReleaseDate: false,
       Alphabetical: false,
     };
   }
-
+  
+//fetching api Data
+  
   componentDidMount() {
     fetch("https://free-to-play-games-database.p.rapidapi.com/api/games", {
       method: "GET",
